@@ -3,51 +3,59 @@ import { motion } from 'framer-motion';
 
 const Awards = () => {
   return (
-    <section id="awards" className="py-20 relative bg-cyber-dark">
+    <section id="awards" className="py-20 relative overflow-hidden">
+      <div className="absolute top-0 right-10 w-[250px] h-[250px] bg-[#FF9500]/6 rounded-full blur-[80px] pointer-events-none" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-end gap-4 mb-16"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+          className="mb-12 md:mb-16"
         >
-          <div className="h-px bg-slate-700 flex-1 max-w-sm"></div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-200">
-            Awards & Honors
-            <span className="text-cyber-green font-mono text-xl ml-2">.04</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full mb-4 shadow-glass">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF9500]" />
+            <span className="text-[12px] font-medium text-[#636366] tracking-tight">Recognition</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-[#1C1C1E] tracking-[-0.03em]">
+            Awards & Honors.
           </h2>
         </motion.div>
         
         <div className="flex justify-center">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            whileHover={{ scale: 1.02 }}
-            className="relative w-full max-w-3xl group"
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+            whileHover={{ y: -4 }}
+            className="relative w-full max-w-3xl rounded-3xl glass shadow-glass overflow-hidden group"
           >
-            {/* Glowing border effect */}
-            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-cyber-green to-cyber-blue opacity-30 blur group-hover:opacity-70 transition duration-500"></div>
+            {/* Top gold gradient accent */}
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FF9500] via-[#FFCC00] to-[#FF9500]" />
             
-            <div className="relative bg-cyber-darker border border-slate-700 rounded-lg p-8 flex flex-col md:flex-row items-center gap-6">
-              <div className="w-20 h-20 shrink-0 bg-cyber-dark border border-cyber-green/50 rounded-full flex items-center justify-center text-cyber-green group-hover:text-cyber-blue transition-colors group-hover:border-cyber-blue shadow-[0_0_15px_rgba(0,255,65,0.2)]">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                </svg>
+            <div className="p-8 md:p-10 flex flex-col md:flex-row items-center gap-7">
+              {/* Trophy icon */}
+              <div className="w-20 h-20 shrink-0 rounded-3xl bg-gradient-to-br from-[#FF9500]/15 to-[#FFCC00]/15 border border-[#FF9500]/20 flex items-center justify-center shadow-sm">
+                <span className="text-4xl">🏆</span>
               </div>
               
               <div className="text-center md:text-left">
-                <div className="font-mono text-cyber-green text-sm mb-2 group-hover:text-glow-green transition-all">
-                  Tahun 2023
+                <div className="inline-flex items-center gap-1.5 mb-3">
+                  <span className="px-2.5 py-1 text-[11px] font-semibold rounded-lg tracking-tight" style={{ background: 'rgba(255,149,0,0.10)', color: '#FF9500', border: '1px solid rgba(255,149,0,0.15)' }}>
+                    2023
+                  </span>
+                  <span className="px-2.5 py-1 text-[11px] font-semibold rounded-lg tracking-tight" style={{ background: 'rgba(255,204,0,0.10)', color: '#CC8800', border: '1px solid rgba(255,204,0,0.15)' }}>
+                    Regional
+                  </span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-100 mb-2">
-                  2nd Place - Cybersecurity Competition
+                <h3 className="text-xl md:text-2xl font-bold text-[#1C1C1E] mb-2 tracking-[-0.02em]">
+                  2nd Place — Cybersecurity Competition
                 </h3>
-                <p className="text-slate-400">
-                  Lomba Kompetensi Siswa (LKS) Tingkat Kabupaten Sidoarjo. Penghargaan atas keunggulan dalam analisis keamanan, penetrasi sistem, dan hardening server.
+                <p className="text-[14px] text-[#636366] leading-relaxed">
+                  Lomba Kompetensi Siswa (LKS) Tingkat Kabupaten. Penghargaan atas keunggulan dalam analisis keamanan, penetrasi sistem, dan hardening server.
                 </p>
               </div>
             </div>

@@ -15,93 +15,48 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About & Skills', href: '#bento' },
+    { name: 'About', href: '#bento' },
     { name: 'Projects', href: '#projects' },
     { name: 'Awards', href: '#awards' },
   ];
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 pointer-events-none px-4 md:px-6">
-      <div className="max-w-4xl mx-auto w-full">
+    <header className="fixed bottom-6 left-0 right-0 z-[100] pointer-events-none px-4 md:px-6 flex justify-center">
+      <div className="max-w-max mx-auto w-full">
         <motion.nav 
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ y: 100, opacity: 0, scale: 0.96 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1], delay: 0.2 }}
           className="pointer-events-auto relative w-full"
         >
-          <div className={`
-            rounded-full px-5 py-3 md:px-6 md:py-3 flex justify-between items-center transition-all duration-300 w-full
-            ${isScrolled 
-              ? 'bg-cyber-dark/80 backdrop-blur-xl border border-cyber-green/30 shadow-[0_4px_30px_rgba(0,255,65,0.15)]' 
-              : 'bg-[#030610]/90 backdrop-blur-md border border-slate-700/80 shadow-lg'
-            }
-          `}>
-            <a href="#home" className="text-lg md:text-xl font-mono font-bold text-slate-200 flex items-center group flex-shrink-0">
-              <span className="text-cyber-green mr-1">&gt;</span> 
-              KH<span className="w-1.5 h-3 md:w-2 md:h-4 bg-cyber-green ml-1 group-hover:animate-pulse">_</span>
-            </a>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-1 bg-cyber-darker/50 rounded-full px-2 py-1 border border-slate-800/50">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-slate-400 hover:text-cyber-green transition-colors font-mono text-xs lg:text-sm px-4 py-2 rounded-full hover:bg-cyber-green/10 whitespace-nowrap"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-
-            <div className="hidden md:block flex-shrink-0">
-              <a href="#contact" className="px-5 py-2 text-sm font-mono text-cyber-darker bg-cyber-green rounded-full hover:shadow-[0_0_20px_rgba(0,255,65,0.6)] hover:scale-105 transition-all font-bold whitespace-nowrap">
-                Let's Talk
-              </a>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="flex md:hidden flex-shrink-0">
-              <button 
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-slate-300 hover:text-cyber-green focus:outline-none p-1.5 -mr-1"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {isMobileMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  )}
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Menu Dropdown */}
+          {/* Mobile Menu Dropdown (pops UP from the island) */}
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div 
-                initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                initial={{ opacity: 0, scale: 0.95, y: 16 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                className="md:hidden absolute top-full left-0 right-0 mt-3 p-4 bg-cyber-darker/95 backdrop-blur-xl border border-cyber-green/30 rounded-2xl shadow-2xl z-50 w-full"
+                exit={{ opacity: 0, scale: 0.95, y: 16 }}
+                transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+                className="md:hidden absolute bottom-full mb-4 left-0 right-0 p-4 rounded-3xl z-40 overflow-hidden glass-strong shadow-glass-lg"
               >
-                <div className="flex flex-col space-y-2">
+                {/* Subtle tint layer */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ios-blue/5 to-transparent pointer-events-none rounded-3xl" />
+                <div className="flex flex-col space-y-1.5 relative z-10">
                   {navLinks.map((link) => (
                     <a
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="px-4 py-3 text-sm font-mono text-slate-300 hover:text-cyber-green hover:bg-cyber-green/10 rounded-xl transition-colors"
+                      className="px-5 py-3.5 text-[15px] font-medium text-[#1C1C1E] hover:text-ios-blue hover:bg-ios-blue/8 active:bg-ios-blue/15 rounded-2xl transition-colors text-center tracking-[-0.01em]"
                     >
                       {link.name}
                     </a>
                   ))}
-                  <div className="h-px bg-slate-800 my-2"></div>
+                  <div className="h-px bg-[#3C3C43]/12 my-2 mx-4"></div>
                   <a 
                     href="#contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="px-4 py-3 text-center text-sm font-mono text-cyber-darker bg-cyber-green rounded-xl font-bold mt-2 hover:bg-emerald-400 transition-colors"
+                    className="px-5 py-4 text-center text-[15px] font-semibold text-white bg-[#007AFF] rounded-2xl mt-1 shadow-ios-blue"
                   >
                     Let's Talk
                   </a>
@@ -109,6 +64,68 @@ const Navbar = () => {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Dynamic Island */}
+          <div className={`
+            rounded-full flex justify-between items-center transition-all duration-500 w-full mx-auto
+            ${isScrolled 
+              ? 'glass-strong px-5 py-3 md:px-6 md:gap-8 shadow-glass-md' 
+              : 'glass px-4 py-2.5 md:px-5 md:gap-4 shadow-glass'
+            }
+          `}>
+            {/* Logo */}
+            <a href="#home" className="text-[17px] md:text-[18px] font-semibold text-[#1C1C1E] flex items-center group flex-shrink-0 tracking-tight pl-1">
+              <span className="text-[#007AFF] mr-1 font-bold text-xl select-none">K</span>
+              <span>Hansen</span>
+              <motion.span 
+                animate={{ opacity: [1, 0, 1] }} 
+                transition={{ duration: 1.2, repeat: Infinity }}
+                className="w-0.5 h-4 bg-[#007AFF] ml-1.5 rounded-full"
+              />
+            </a>
+            
+            {/* Desktop Nav Links */}
+            <div className="hidden md:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="px-4 py-2 text-[14px] font-medium text-[#636366] hover:text-[#007AFF] hover:bg-[#007AFF]/8 rounded-full transition-colors whitespace-nowrap tracking-[-0.01em]"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="hidden md:block flex-shrink-0">
+              <a 
+                href="#contact" 
+                className="px-5 py-2.5 text-[14px] font-semibold text-white bg-[#007AFF] rounded-full shadow-ios-blue hover:shadow-ios-blue-lg hover:bg-[#0056CC] transition-all whitespace-nowrap block"
+              >
+                Let's Talk
+              </a>
+            </div>
+
+            {/* Mobile Toggle */}
+            <div className="flex md:hidden flex-shrink-0">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`focus:outline-none p-2 rounded-full transition-colors ${isMobileMenuOpen ? 'bg-[#007AFF]/10 text-[#007AFF]' : 'text-[#636366] hover:bg-black/5'}`}
+              >
+                <motion.svg 
+                  animate={{ rotate: isMobileMenuOpen ? 45 : 0 }}
+                  transition={{ duration: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
+                  className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                >
+                  {isMobileMenuOpen 
+                    ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  }
+                </motion.svg>
+              </button>
+            </div>
+          </div>
         </motion.nav>
       </div>
     </header>

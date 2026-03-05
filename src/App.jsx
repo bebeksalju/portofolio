@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="bg-[#030610] min-h-screen text-slate-300 font-sans selection:bg-cyber-green selection:text-cyber-dark relative selection:bg-opacity-80">
+    <div className="ios-mesh-bg min-h-screen text-[#1C1C1E] font-sans selection:bg-ios-blue/20 selection:text-ios-blue relative overflow-hidden">
       <Navbar />
       <main>
         <Hero />
