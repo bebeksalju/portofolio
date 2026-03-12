@@ -37,17 +37,17 @@ const Hero = () => {
         <motion.div 
           animate={{ x: [0, 40, 0], y: [0, 20, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-[#007AFF]/10 rounded-full blur-[120px]"
+          className="hidden md:block absolute -top-32 -left-32 w-[500px] h-[500px] bg-[#007AFF]/10 rounded-full blur-[120px]"
         />
         <motion.div 
           animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
           transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/3 -right-32 w-[400px] h-[400px] bg-[#5856D6]/10 rounded-full blur-[100px]"
+          className="hidden md:block absolute top-1/3 -right-32 w-[400px] h-[400px] bg-[#5856D6]/10 rounded-full blur-[100px]"
         />
         <motion.div 
           animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-20 left-1/3 w-[350px] h-[350px] bg-[#34C759]/8 rounded-full blur-[100px]"
+          className="hidden md:block absolute -bottom-20 left-1/3 w-[350px] h-[350px] bg-[#34C759]/8 rounded-full blur-[100px]"
         />
       </div>
 

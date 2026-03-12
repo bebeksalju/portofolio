@@ -67,13 +67,31 @@
     animation: marquee-reverse 30s linear infinite;
   }
 
-  /* Tinted background layers */
+  /* Tinted background layers with animation */
   .ios-mesh-bg {
-    background: 
-      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(0, 122, 255, 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 70% 60% at 80% 80%, rgba(88, 86, 214, 0.07) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 50% at 50% 50%, rgba(52, 199, 89, 0.04) 0%, transparent 60%),
-      #F2F2F7;
+    background: linear-gradient(-45deg, 
+      #F2F2F7, 
+      #E5E5EA, 
+      rgba(0, 122, 255, 0.08), 
+      #F2F2F7, 
+      rgba(88, 86, 214, 0.1), 
+      #F2F2F7,
+      rgba(52, 199, 89, 0.08)
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease-in-out infinite;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -109,4 +127,10 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 122, 255, 0.5);
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-150%); }
+  50% { transform: translateX(150%); }
+  100% { transform: translateX(150%); }
 }

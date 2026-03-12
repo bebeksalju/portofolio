@@ -3,34 +3,34 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
-    title: "Inventory Management System",
-    description: "Sistem absensi dan kasir modern dengan fitur pelacakan inventaris real-time, manajemen barang, serta rekapitulasi penjualan harian. Dirancang untuk efisiensi operasional UMKM.",
-    tech: ["PHP", "CodeIgniter 4", "Bootstrap 5", "MySQL"],
-    link: "#",
-    icon: "📦",
-    accent: "rgba(0,122,255,0.08)",
-    accentBorder: "rgba(0,122,255,0.15)",
-    tagColor: "#007AFF",
-  },
-  {
-    title: "Shipment QR Code Scanner",
-    description: "Aplikasi internal untuk optimasi logistik. Karyawan dapat melakukan pemindaian barcode/QR code resi pengiriman untuk melacak status paket secara otomatis dan akurat.",
-    tech: ["PHP", "Bootstrap 5", "JavaScript", "Zxing Scanner"],
-    link: "#",
-    icon: "📷",
+    title: "Dokter Vin - Psychologist AI",
+    description: "Chatbot psikolog virtual berbasis Flask & Gemini AI yang dirancang khusus untuk Gen Z dengan pendekatan CBT (Cognitive Behavioral Therapy) dan Mindfulness.",
+    tech: ["Python", "Flask", "Gemini AI", "Tailwind"],
+    link: "https://github.com/bebeksalju/doktervin",
+    logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
     accent: "rgba(52,199,89,0.08)",
     accentBorder: "rgba(52,199,89,0.15)",
     tagColor: "#34C759",
   },
   {
-    title: "Infrastructure & Security Lab",
-    description: "Laboratorium virtual untuk simulasi hardening server dan keamanan jaringan. Proyek eksperimental untuk menguji berbagai kerentanan dan strategi mitigasi di lingkungan isolasi.",
-    tech: ["Proxmox", "Linux Server", "Docker", "Bash"],
-    link: "#",
-    icon: "🔐",
+    title: "Solana Voting Framework",
+    description: "Sistem voting terdesentralisasi yang aman dan transparan di blockchain Solana menggunakan Rust dan Anchor Framework. Mengimplementasikan logika smart contract on-chain.",
+    tech: ["Rust", "Anchor", "Solana", "TypeScript"],
+    link: "https://github.com/bebeksalju/solana-voting",
+    logoUrl: "https://www.google.com/s2/favicons?domain=solana.com&sz=128",
     accent: "rgba(88,86,214,0.08)",
     accentBorder: "rgba(88,86,214,0.15)",
     tagColor: "#5856D6",
+  },
+  {
+    title: "Curhat-AI Voice Assistant",
+    description: "Aplikasi pendengar curhat yang mengintegrasikan Google Generative AI dengan modul Text-to-Speech (TTS) untuk memberikan respon suara yang menenangkan secara real-time.",
+    tech: ["Python", "Gemini Pro", "TTS", "AI"],
+    link: "https://github.com/bebeksalju/Curhat-AI",
+    logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    accent: "rgba(0,122,255,0.08)",
+    accentBorder: "rgba(0,122,255,0.15)",
+    tagColor: "#007AFF",
   }
 ];
 
@@ -38,7 +38,7 @@ const ExperienceProjects = () => {
   return (
     <section id="projects" className="py-20 md:py-24 relative overflow-hidden">
       {/* Ambient blobs */}
-      <div className="absolute -bottom-20 left-0 w-[350px] h-[350px] bg-[#34C759]/6 rounded-full blur-[100px] pointer-events-none" />
+      <div className="hidden md:block absolute -bottom-20 left-0 w-[350px] h-[350px] bg-[#34C759]/6 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -83,10 +83,14 @@ const ExperienceProjects = () => {
                 {/* Header */}
                 <div className="flex justify-between items-start mb-5">
                   <div 
-                    className="w-11 h-11 rounded-2xl flex items-center justify-center text-xl shadow-sm"
+                    className="w-11 h-11 rounded-2xl flex items-center justify-center text-xl shadow-sm overflow-hidden p-2"
                     style={{ background: project.accent, border: `1px solid ${project.accentBorder}` }}
                   >
-                    {project.icon}
+                    {project.logoUrl ? (
+                      <img src={project.logoUrl} alt={project.title} className="w-full h-full object-contain" />
+                    ) : (
+                      project.icon
+                    )}
                   </div>
                   <a 
                     href={project.link} 

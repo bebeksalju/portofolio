@@ -49,7 +49,7 @@ const About = () => {
             <motion.div 
               animate={{ rotate: [3, 5, 3] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0 bg-cyber-green/5 blur-2xl rounded-lg"
+              className="hidden md:block absolute inset-0 bg-cyber-green/5 blur-2xl rounded-lg"
             />
             <motion.div 
               whileHover={{ scale: 1.02, borderColor: "#00ff41", boxShadow: "0 0 20px rgba(0,255,65,0.2)" }}
@@ -71,7 +71,7 @@ const About = () => {
                 <div>
                   <span className="text-cyber-blue">$</span> cat location.txt
                   <br />
-                  <span className="text-slate-400">&gt; Indonesia</span>
+                  <span className="text-slate-400">&gt; Sidoarjo, Indonesia</span>
                 </div>
                 <div>
                   <span className="text-cyber-blue">$</span> ./get_focus.sh

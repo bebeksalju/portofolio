@@ -5,8 +5,8 @@ const Contact = () => {
   return (
     <footer id="contact" className="relative pb-32 overflow-hidden">
       {/* Ambient blobs */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#007AFF]/8 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-20 right-0 w-[300px] h-[300px] bg-[#5856D6]/6 rounded-full blur-[100px] pointer-events-none" />
+      <div className="hidden md:block absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#007AFF]/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="hidden md:block absolute top-20 right-0 w-[300px] h-[300px] bg-[#5856D6]/6 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative pt-24 md:pt-32 pb-16 md:pb-24 border-t border-black/[0.06]">
         <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center relative z-10">

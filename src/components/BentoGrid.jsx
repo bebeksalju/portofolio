@@ -2,18 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: "Python", icon: "🐍" },
-  { name: "React", icon: "⚛️" },
-  { name: "Docker", icon: "🐳" },
-  { name: "Linux", icon: "🐧" },
-  { name: "Proxmox", icon: "🖥️" },
-  { name: "Node.js", icon: "🟢" },
-  { name: "Bash", icon: "💻" },
-  { name: "MySQL", icon: "🗄️" },
-  { name: "Git", icon: "🌿" },
-  { name: "Tailwind", icon: "🎨" },
-  { name: "Nginx", icon: "⚙️" },
-  { name: "Ansible", icon: "🤖" },
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+  { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+  { name: "Proxmox", icon: "https://www.google.com/s2/favicons?domain=proxmox.com&sz=128" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Bash", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Nginx", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
+  { name: "Ansible", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" },
 ];
 
 const fadeIn = {
@@ -25,7 +25,7 @@ const BentoGrid = () => {
   return (
     <section id="bento" className="py-20 md:py-24 relative overflow-hidden">
       {/* Ambient blob */}
-      <div className="absolute -top-40 right-0 w-[400px] h-[400px] bg-[#5856D6]/6 rounded-full blur-[120px] pointer-events-none" />
+      <div className="hidden md:block absolute -top-40 right-0 w-[400px] h-[400px] bg-[#5856D6]/6 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -59,7 +59,7 @@ const BentoGrid = () => {
             className="md:col-span-2 md:row-span-2 rounded-3xl glass shadow-glass p-7 md:p-8 flex flex-col justify-between relative overflow-hidden min-h-[280px] md:min-h-0"
           >
             {/* Decorative tint */}
-            <div className="absolute top-0 right-0 w-52 h-52 bg-[#007AFF]/6 rounded-full blur-3xl pointer-events-none" />
+            <div className="hidden md:block absolute top-0 right-0 w-52 h-52 bg-[#007AFF]/6 rounded-full blur-3xl pointer-events-none" />
             
             <div className="relative z-10">
               <div className="w-11 h-11 rounded-2xl bg-[#007AFF] flex items-center justify-center mb-5 shadow-ios-blue">
@@ -94,7 +94,7 @@ const BentoGrid = () => {
               <div className="flex gap-2.5 w-max animate-marquee">
                 {[...skills, ...skills].map((skill, i) => (
                   <div key={`r1-${i}`} className="flex items-center gap-1.5 px-3.5 py-2 bg-white/70 border border-white/60 rounded-xl whitespace-nowrap shadow-sm">
-                    <span className="text-base">{skill.icon}</span>
+                    <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain" />
                     <span className="text-[#1C1C1E] font-medium text-[13px]">{skill.name}</span>
                   </div>
                 ))}
@@ -103,7 +103,7 @@ const BentoGrid = () => {
               <div className="flex gap-2.5 w-max animate-marquee-reverse">
                 {[...skills, ...skills].reverse().map((skill, i) => (
                   <div key={`r2-${i}`} className="flex items-center gap-1.5 px-3.5 py-2 bg-white/70 border border-white/60 rounded-xl whitespace-nowrap shadow-sm">
-                    <span className="text-base">{skill.icon}</span>
+                    <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain" />
                     <span className="text-[#1C1C1E] font-medium text-[13px]">{skill.name}</span>
                   </div>
                 ))}
@@ -131,7 +131,7 @@ const BentoGrid = () => {
                 <span className="text-[11px] font-semibold text-[#636366] uppercase tracking-wider">Location</span>
               </div>
               <h3 className="text-xl font-bold text-[#1C1C1E] tracking-tight">Indonesia 🌏</h3>
-              <p className="text-[13px] text-[#636366] mt-1">Kalimantan Selatan</p>
+              <p className="text-[13px] text-[#636366] mt-1">Sidoarjo, Jawa Timur</p>
             </div>
           </motion.div>
 

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Awards = () => {
   return (
     <section id="awards" className="py-20 relative overflow-hidden">
-      <div className="absolute top-0 right-10 w-[250px] h-[250px] bg-[#FF9500]/6 rounded-full blur-[80px] pointer-events-none" />
+      <div className="hidden md:block absolute top-0 right-10 w-[250px] h-[250px] bg-[#FF9500]/6 rounded-full blur-[80px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
