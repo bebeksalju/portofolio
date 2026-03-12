@@ -3,6 +3,21 @@ import { motion } from 'framer-motion';
 
 const certificateProviders = [
   {
+    provider: "BNSP",
+    subtitle: "Rekayasa Perangkat Lunak",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_Badan_Nasional_Sertifikasi_Profesi.png",
+    accent: "rgba(255,59,48,0.08)",
+    accentBorder: "rgba(255,59,48,0.15)",
+    certificates: [
+      { 
+        name: "Sertifikasi Kompetensi Rekayasa Perangkat Lunak", 
+        description: "Membangun aplikasi manajemen kepegawaian berbasis desktop menggunakan Java dan MySQL.",
+        date: "Mar 2024", 
+        id: "202404030296" 
+      },
+    ]
+  },
+  {
     provider: "MySkill",
     subtitle: "Spesialisasi & Learning Path",
     logoUrl: "https://www.google.com/s2/favicons?domain=myskill.id&sz=128",
@@ -42,16 +57,6 @@ const certificateProviders = [
       { name: "Data Programming", date: "29 September 2023" },
       { name: "SQL Intermediate", date: "13 April 2023" },
       { name: "JavaScript", date: "31 Juli 2022" },
-    ]
-  },
-  {
-    provider: "BNSP",
-    subtitle: "Rekayasa Perangkat Lunak",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_Badan_Nasional_Sertifikasi_Profesi.png",
-    accent: "rgba(255,59,48,0.08)",
-    accentBorder: "rgba(255,59,48,0.15)",
-    certificates: [
-      { name: "Sertifikasi Kompetensi Rekayasa Perangkat Lunak", date: "Mar 2024", id: "202404030296" },
     ]
   }
 ];
@@ -151,7 +156,12 @@ const Certificates = () => {
                         <h4 className="text-[15px] font-semibold text-[#1C1C1E] leading-snug group-hover/item:text-[#007AFF] transition-colors">
                           {cert.name}
                         </h4>
-                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-0.5">
+                        {cert.description && (
+                          <p className="text-[12px] text-[#636366] mt-1 leading-relaxed">
+                            {cert.description}
+                          </p>
+                        )}
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1.5">
                           <p className="text-[13px] text-[#8E8E93] font-medium flex items-center gap-1">
                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                             {cert.date}
